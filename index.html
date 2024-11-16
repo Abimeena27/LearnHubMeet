@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Schedules - LearnHubAssistance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9; /* Faded white background */
+            color: #333; /* Dark text */
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff; /* White background */
+            color: #333; /* Black text */
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #1e3a8a; /* Blue underline */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        h1 span {
+            color: #1e3a8a; /* Blue color for 'Assistance' */
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ffffff; /* White background for meeting items */
+            border: 1px solid #d0e4f7; /* Light blue border */
+            border-radius: 10px;
+            margin: 10px 0;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Stronger shadow for a lifted effect */
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        li:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+        }
+
+        li h2 {
+            margin: 0 0 10px;
+            color: #1e3a8a; /* Blue title for meeting name */
+        }
+
+        li p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #555; /* Slightly lighter text for time */
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #1e3a8a; /* Blue button */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #17407a; /* Darker blue on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ffffff; /* White background */
+            color: #1e3a8a; /* Blue text */
+            border-top: 2px solid #1e3a8a; /* Blue border on top */
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span>LearnHub</span>Assistance</h1>
+    </header>
+    <main>
+        <ul id="schedule-list">
+            <!-- Meeting items will be dynamically inserted here -->
+        </ul>
+    </main>
+    <footer>
+        &copy; 2024 LearnHubAssistance. All Rights Reserved.
+    </footer>
+    <script>
+    const meetings = [
+        {
+            "title": "Microsoft Excel",
+            "time": "10:00 AM - 11:00 AM",
+            "link": "https://meet.google.com/gxz-hmbm-yay"
+        },
+        {
+            "title": "AWS",
+            "time": "11:30 AM - 12:30 PM",
+            "link": "https://meet.google.com/gyd-xhzt-uki"
+        },
+        {
+            "title": "Python",
+            "time": "12:30 PM - 1:30 PM",
+            "link": "https://meet.google.com/cvd-jvwb-rws"
+        },
+        {
+            "title": "Java",
+            "time": "1:30 PM - 2:30 PM",
+            "link": "https://meet.google.com/hbw-qcad-inf"
+        },
+        {
+            "title": "Web Design",
+            "time": "3:00 PM - 4:00 PM",
+            "link": "https://meet.google.com/gep-ijdu-xjd"
+        },
+        {
+            "title": "Web Development",
+            "time": "4:00 PM - 5:00 PM",
+            "link": "https://meet.google.com/dft-qwrn-oco"
+        },
+        {
+            "title": "MySQL",
+            "time": "5:30 PM - 6:30 PM",
+            "link": "https://meet.google.com/yhy-jqjd-hhp"
+        },
+        {
+            "title": "UI/UX Design",
+            "time": "6:30 PM - 7:30 PM",
+            "link": "https://meet.google.com/xvk-nqft-wkq"
+        }
+    ];
+
+    const scheduleList = document.getElementById('schedule-list');
+    meetings.forEach(meeting => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <h2>${meeting.title}</h2>
+            <p>${meeting.time}</p>
+            <a href="${meeting.link}" target="_blank">Join Meeting</a>
+        `;
+        scheduleList.appendChild(listItem);
+    });
+    </script>
+</body>
+</html>
